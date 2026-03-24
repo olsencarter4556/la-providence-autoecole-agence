@@ -3,37 +3,38 @@
 import Image from "next/image"
 import { useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { publicImages } from "@/lib/public-images"
 
 const vehicles = [
   {
     name: "Suzuki Baleno",
     category: "Berline légère",
     permit: "Permis B",
-    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=600",
+    image: publicImages.suzukiBaleno,
   },
   {
     name: "Hyundai i30",
     category: "Berline compacte",
     permit: "Permis B",
-    image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=600",
+    image: publicImages.hyundaiI30,
   },
   {
     name: "Mitsubishi L200",
     category: "Pick-up 4x4",
     permit: "Permis B/C",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600",
+    image: publicImages.mitsubishiL200,
   },
   {
     name: "Toyota HiAce",
     category: "Minibus",
     permit: "Permis D",
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600",
+    image: publicImages.toyotaHiAce,
   },
   {
     name: "Toyota Coaster",
     category: "Grand Bus",
     permit: "Permis D/E",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600",
+    image: publicImages.toyotaCoaster,
   },
 ]
 

@@ -18,4 +18,9 @@ export const publicImages = {
   salleClimatisee: publicFile("salle climatisées-2093744_1280.jpg"),
   coursAnglais: publicFile("cours anglais.jpg"),
   suiviPersonnalise: publicFile("suivi personnalié-1024x681.jpg"),
+  suzukiBaleno: publicFile("Suzuki Baleno.jpg"),
+  hyundaiI30: publicFile("Hyundai i30.jpg"),
+  mitsubishiL200: publicFile("Mitsubishi L200.jpg"),
+  toyotaHiAce: publicFile("Toyota HiAce.png"),
+  toyotaCoaster: publicFile("Toyota Coasterr.png"),
 } as const
