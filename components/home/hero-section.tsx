@@ -3,17 +3,14 @@ import Link from "next/link"
 export function HeroSection() {
   return (
     <section className="relative min-h-screen bg-gray-900">
-      {/* Background image with overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1600')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1600&q=80')`,
         }}
       />
-      {/* Dark red overlay */}
-      <div className="absolute inset-0 bg-[rgba(139,0,0,0.70)]" />
+      <div className="absolute inset-0 bg-[rgba(139,0,0,0.72)]" />
 
-      {/* Content */}
       <div className="relative container mx-auto flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center text-white">
         <span className="mb-4 inline-block rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-sm">
           Depuis 2023 - Okala Auberge, Libreville
@@ -42,7 +39,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Stats bar */}
       <div className="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm">
         <div className="container mx-auto flex flex-wrap items-center justify-center gap-8 px-4 py-6 text-center text-white md:justify-around">
           <div>
