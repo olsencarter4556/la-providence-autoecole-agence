@@ -1,33 +1,33 @@
-import type { ComponentType } from "react"
-import {
-  IconProjectorRich,
-  IconClimRich,
-  IconLanguagesRich,
-  IconSuiviRich,
-} from "@/components/icons/brand-illustrations"
+import Image from "next/image"
 
-type AdvIcon = ComponentType<{ className?: string }>
-
-const advantages: { Icon: AdvIcon; title: string; description: string }[] = [
+const advantages: { title: string; description: string; image: string; imageAlt: string }[] = [
   {
-    Icon: IconProjectorRich,
     title: "Cours projetés",
     description: "Supports visuels modernes en salle pour des cours théoriques clairs et mémorables.",
+    image:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80&auto=format&fit=crop",
+    imageAlt: "Salle de cours et projection pédagogique",
   },
   {
-    Icon: IconClimRich,
     title: "Salle climatisée",
-    description: "Un cadre confortable pour suivre les cours dans les meilleures conditions, toute l’année.",
+    description: "Un cadre confortable pour suivre les cours dans les meilleures conditions, toute l'année.",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-375260702974?w=600&q=80&auto=format&fit=crop",
+    imageAlt: "Espace de formation moderne et lumineux",
   },
   {
-    Icon: IconLanguagesRich,
     title: "Cours en anglais",
     description: "Formation accessible aux anglophones, avec explications adaptées à votre langue.",
+    image:
+      "https://images.unsplash.com/photo-1527866959252-deac0bf71eab?w=600&q=80&auto=format&fit=crop",
+    imageAlt: "Communication et apprentissage des langues",
   },
   {
-    Icon: IconSuiviRich,
     title: "Suivi personnalisé",
-    description: "Accompagnement après l’examen et suivi de votre progression tout au long de la formation.",
+    description: "Accompagnement après l'examen et suivi de votre progression tout au long de la formation.",
+    image:
+      "https://images.unsplash.com/photo-1529156069898-499833e11f54?w=600&q=80&auto=format&fit=crop",
+    imageAlt: "Accompagnement et suivi personnalisé des élèves",
   },
 ]
 
@@ -48,17 +48,25 @@ export function AdvantagesSection() {
           {advantages.map((advantage) => (
             <article
               key={advantage.title}
-              className="flex h-full flex-col items-center rounded-2xl border border-white/10 bg-white/10 p-6 text-center shadow-lg backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-white/20"
+              className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/15 bg-white/10 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/15"
             >
-              <div className="mb-5 flex h-[4.75rem] w-[4.75rem] shrink-0 items-center justify-center rounded-2xl bg-white p-2 shadow-md ring-2 ring-white/40 transition-transform duration-300 hover:scale-105">
-                <advantage.Icon className="h-full w-full" />
+              <div className="relative mx-4 mt-4 aspect-[4/3] w-[calc(100%-2rem)] shrink-0 overflow-hidden rounded-xl bg-black/20 ring-2 ring-white/30">
+                <Image
+                  src={advantage.image}
+                  alt={advantage.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
               </div>
-              <h3 className="mb-2 text-lg font-semibold leading-snug text-white md:text-xl">
-                {advantage.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/85 md:text-[0.9375rem]">
-                {advantage.description}
-              </p>
+              <div className="flex flex-1 flex-col p-6 text-center">
+                <h3 className="mb-2 text-lg font-semibold leading-snug text-white md:text-xl">
+                  {advantage.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-white/85 md:text-[0.9375rem]">
+                  {advantage.description}
+                </p>
+              </div>
             </article>
           ))}
         </div>
