@@ -51,36 +51,44 @@ export default function AProposPage() {
       {/* Histoire */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <span className="mb-2 inline-block text-sm font-semibold uppercase tracking-wider text-[#8B0000]">
+          <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-16">
+            <div className="order-2 max-w-prose lg:order-1">
+              <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-wider text-[#8B0000]">
                 Notre Histoire
               </span>
-              <h2 className="mb-6 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+              <h2 className="mb-8 font-serif text-3xl font-bold leading-tight text-gray-900 md:text-4xl">
                 Une passion pour la formation de qualité
               </h2>
-              <p className="mb-4 text-gray-600 leading-relaxed">
-                Fondée le <strong>16 août 2023</strong> à Okala Auberge, Libreville, La Providence Auto-École et Services est née d'une vision claire : professionnaliser la formation à la conduite au Gabon et contribuer à la sécurité routière nationale.
-              </p>
-              <p className="mb-4 text-gray-600 leading-relaxed">
-                Notre établissement a été créé pour répondre au besoin croissant de formation de qualité dans le secteur automobile. Nous nous engageons à former des conducteurs compétents, responsables et respectueux du code de la route.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Avec une équipe pédagogique qualifiée et des équipements modernes, nous offrons un cadre d'apprentissage optimal pour garantir le succès de nos élèves aux examens de permis de conduire.
-              </p>
+              <div className="space-y-6 text-base leading-[1.75] text-gray-700 md:text-lg md:leading-[1.8]">
+                <p>
+                  Fondée le <strong className="font-semibold text-gray-900">16 août 2023</strong> à Okala Auberge,
+                  Libreville, <strong className="font-semibold text-gray-900">La Providence Auto-École et Services</strong>{" "}
+                  est née d&apos;une vision claire : professionnaliser la formation à la conduite au Gabon et contribuer à
+                  la sécurité routière nationale.
+                </p>
+                <p>
+                  Notre établissement répond au besoin croissant de formation sérieuse dans le secteur automobile. Nous
+                  formons des conducteurs <strong className="font-semibold text-gray-900">compétents</strong>,{" "}
+                  <strong className="font-semibold text-gray-900">responsables</strong> et respectueux du code de la route.
+                </p>
+                <p className="border-l-4 border-[#8B0000]/80 pl-5 text-gray-600">
+                  Une équipe pédagogique qualifiée et des équipements modernes : un cadre d&apos;apprentissage pensé pour
+                  la réussite de nos élèves aux examens du permis de conduire.
+                </p>
+              </div>
             </div>
-            <div className="relative">
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gray-200">
+            <div className="relative order-1 lg:order-2">
+              <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gray-200 shadow-xl ring-1 ring-gray-200">
                 <div
                   className="h-full w-full bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1964')`,
+                    backgroundImage: `url('/auto-ecole-ordinaire.jpg')`,
                   }}
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 rounded-xl bg-white p-6 shadow-xl">
-                <p className="text-sm text-gray-500">Créée le</p>
-                <p className="text-2xl font-bold text-[#8B0000]">16 août 2023</p>
+              <div className="absolute -bottom-5 right-4 max-w-[220px] rounded-xl border border-gray-100 bg-white p-5 shadow-xl sm:-right-2 sm:max-w-none md:-bottom-6 md:-right-6 md:p-6">
+                <p className="text-xs font-medium uppercase tracking-wide text-gray-500">Créée le</p>
+                <p className="mt-1 text-2xl font-bold text-[#8B0000]">16 août 2023</p>
               </div>
             </div>
           </div>

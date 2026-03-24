@@ -1,70 +1,87 @@
-import { Car, Shield, FileText, CreditCard, ShoppingCart, ClipboardList } from "lucide-react"
+import type { ComponentType } from "react"
+import {
+  IconFormation,
+  IconAssurance,
+  IconCarteGrise,
+  IconPlaque,
+  IconAcquisition,
+  IconAdministratif,
+} from "@/components/icons/brand-illustrations"
 
-const services = [
+type ServiceIcon = ComponentType<{ className?: string }>
+
+const services: { Icon: ServiceIcon; title: string; description: string }[] = [
   {
-    icon: Car,
+    Icon: IconFormation,
     title: "Formation à la conduite",
-    description: "Permis A, B, C, D, E, F, G avec cours théoriques et pratiques personnalisés",
+    description:
+      "Permis A, B, C, D, E, F, G avec cours théoriques et pratiques personnalisés, encadrés par des moniteurs expérimentés.",
   },
   {
-    icon: Shield,
+    Icon: IconAssurance,
     title: "Assurance véhicules",
-    description: "Accompagnement complet pour tous vos besoins en assurance automobile",
+    description:
+      "Accompagnement complet pour souscrire ou renouveler votre assurance auto : conseils, dossiers et mise en relation.",
   },
   {
-    icon: FileText,
+    Icon: IconCarteGrise,
     title: "Cartes grises",
-    description: "Établissement et renouvellement de vos cartes grises en toute simplicité",
+    description:
+      "Établissement, duplicata et renouvellement de cartes grises : nous vous guidons à chaque étape administrative.",
   },
   {
-    icon: CreditCard,
+    Icon: IconPlaque,
     title: "Plaques d'immatriculation",
-    description: "Fabrication de plaques d'immatriculation personnalisées",
+    description:
+      "Fabrication et pose de plaques conformes, personnalisées selon les normes en vigueur au Gabon.",
   },
   {
-    icon: ShoppingCart,
+    Icon: IconAcquisition,
     title: "Acquisition de véhicules",
-    description: "Recherche, importation, vente et location de véhicules",
+    description:
+      "Recherche, importation, vente et location : un interlocuteur unique pour votre projet d’achat ou de location.",
   },
   {
-    icon: ClipboardList,
+    Icon: IconAdministratif,
     title: "Accompagnement administratif",
-    description: "Assistance dans toutes vos démarches automobiles administratives",
+    description:
+      "Assistance pour toutes vos démarches liées au véhicule : documents, formalités et suivi jusqu’à l’aboutissement.",
   },
 ]
 
 export function ServicesHighlight() {
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="bg-gradient-to-b from-gray-50 to-white py-20">
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
+        <div className="mb-14 text-center">
           <span className="mb-2 inline-block text-sm font-semibold uppercase tracking-wider text-[#8B0000]">
             Ce que nous offrons
           </span>
           <h2 className="font-serif text-3xl font-bold text-gray-900 md:text-4xl">
             Nos Services
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-gray-600">
-            Une gamme complète de services automobiles pour répondre à tous vos besoins
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-base text-gray-600 md:text-lg">
+            Une gamme complète de services automobiles pour répondre à tous vos besoins, du permis aux démarches
+            administratives.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div
+            <article
               key={service.title}
-              className="group rounded-xl bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1"
+              className="group flex h-full min-h-0 flex-col rounded-2xl border border-gray-100/80 bg-white p-6 shadow-sm ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-[#8B0000]/15"
             >
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-[#8B0000]/10 text-[#8B0000] transition-colors group-hover:bg-[#8B0000] group-hover:text-white">
-                <service.icon className="h-7 w-7" />
+              <div className="mb-5 flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#8B0000]/12 via-white to-amber-50/80 p-2 shadow-inner ring-1 ring-[#8B0000]/10 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-md md:h-[5rem] md:w-[5rem]">
+                <service.Icon className="h-[88%] w-[88%] drop-shadow-sm" />
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
+              <h3 className="mb-3 text-lg font-semibold leading-snug text-gray-900 md:text-xl">
                 {service.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm leading-relaxed text-gray-600 md:text-[0.9375rem] md:leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
