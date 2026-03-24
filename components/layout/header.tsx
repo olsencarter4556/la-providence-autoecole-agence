@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { Menu, X, Phone, MessageCircle } from "lucide-react"
 import { Logo } from "./logo"
 import { cn } from "@/lib/utils"
+import { whatsappChatUrl } from "@/lib/whatsapp"
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -56,7 +57,7 @@ export function Header() {
             </a>
           </div>
           <a
-            href="https://wa.me/24176592517"
+            href={whatsappChatUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-gray-200"
@@ -136,7 +137,7 @@ export function Header() {
                   <span>076 592 517</span>
                 </a>
                 <a
-                  href="https://wa.me/24176592517"
+                  href={whatsappChatUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-green-600"

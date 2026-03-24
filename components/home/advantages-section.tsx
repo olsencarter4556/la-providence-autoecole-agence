@@ -1,33 +1,30 @@
 import Image from "next/image"
+import { publicImages } from "@/lib/public-images"
 
 const advantages: { title: string; description: string; image: string; imageAlt: string }[] = [
   {
     title: "Cours projetés",
     description: "Supports visuels modernes en salle pour des cours théoriques clairs et mémorables.",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80&auto=format&fit=crop",
-    imageAlt: "Salle de cours et projection pédagogique",
+    image: publicImages.coursProjete,
+    imageAlt: "Cours théorique projeté en salle",
   },
   {
     title: "Salle climatisée",
     description: "Un cadre confortable pour suivre les cours dans les meilleures conditions, toute l'année.",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-375260702974?w=600&q=80&auto=format&fit=crop",
-    imageAlt: "Espace de formation moderne et lumineux",
+    image: publicImages.salleClimatisee,
+    imageAlt: "Salle de cours climatisée",
   },
   {
     title: "Cours en anglais",
     description: "Formation accessible aux anglophones, avec explications adaptées à votre langue.",
-    image:
-      "https://images.unsplash.com/photo-1527866959252-deac0bf71eab?w=600&q=80&auto=format&fit=crop",
-    imageAlt: "Communication et apprentissage des langues",
+    image: publicImages.coursAnglais,
+    imageAlt: "Cours dispensés en anglais",
   },
   {
     title: "Suivi personnalisé",
     description: "Accompagnement après l'examen et suivi de votre progression tout au long de la formation.",
-    image:
-      "https://images.unsplash.com/photo-1529156069898-499833e11f54?w=600&q=80&auto=format&fit=crop",
-    imageAlt: "Accompagnement et suivi personnalisé des élèves",
+    image: publicImages.suiviPersonnalise,
+    imageAlt: "Suivi personnalisé des élèves",
   },
 ]
 

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Phone, MapPin, Clock, Facebook, Instagram, MessageCircle } from "lucide-react"
 import { partners } from "@/lib/partners"
+import { whatsappChatUrl } from "@/lib/whatsapp"
 
 const quickLinks = [
   { href: "/", label: "Accueil" },
@@ -88,7 +89,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://wa.me/24176592517"
+                href={whatsappChatUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-gray-400 transition-colors hover:bg-green-600 hover:text-white"

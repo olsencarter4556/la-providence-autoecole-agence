@@ -1,28 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { createPortal } from "react-dom"
-
-/** Numéro international sans + ni espaces (Gabon) */
-const WHATSAPP_PHONE = "24176592517"
-
-/** Lien court : ouvre l’app / WhatsApp Web (sans target=_blank pour navigateurs intégrés) */
-const whatsappHref = `https://wa.me/${WHATSAPP_PHONE}`
+import { whatsappChatUrl } from "@/lib/whatsapp"
 
 export function WhatsAppButton() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const node = (
+  return (
     <a
-      href={whatsappHref}
+      href={whatsappChatUrl}
+      target="_blank"
       rel="noopener noreferrer"
-      className="group fixed bottom-6 right-6 flex h-16 w-16 cursor-pointer touch-manipulation items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110 active:scale-95"
-      style={{ zIndex: 2147483647 }}
-      aria-label="Contactez-nous sur WhatsApp"
+      className="group fixed bottom-6 right-6 z-[9999] flex h-16 w-16 cursor-pointer touch-manipulation items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110 active:scale-95"
+      aria-label="Ouvrir la conversation WhatsApp avec La Providence Auto-École"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,14 +24,8 @@ export function WhatsAppButton() {
         />
       </svg>
       <span className="pointer-events-none absolute bottom-full right-0 mb-2 hidden whitespace-nowrap rounded bg-gray-900 px-3 py-2 text-sm text-white group-hover:block group-focus-visible:block">
-        Contactez-nous sur WhatsApp
+        Discuter sur WhatsApp
       </span>
     </a>
   )
-
-  if (!mounted) {
-    return null
-  }
-
-  return createPortal(node, document.body)
 }

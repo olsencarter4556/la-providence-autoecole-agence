@@ -1,53 +1,45 @@
 import Image from "next/image"
+import { publicImages } from "@/lib/public-images"
 
-const services: { title: string; description: string; image: string; imageAlt: string }[] = [
+/** Photo d’illustration : une seule image locale pour l’instant ; remplacez par des fichiers dédiés dans /public si besoin. */
+const serviceCover = publicImages.autoEcole
+
+const services: { title: string; description: string; imageAlt: string }[] = [
   {
     title: "Formation à la conduite",
     description:
       "Permis A, B, C, D, E, F, G avec cours théoriques et pratiques personnalisés, encadrés par des moniteurs expérimentés.",
-    image:
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Élève au volant lors d'une leçon de conduite",
+    imageAlt: "Formation à la conduite — La Providence Auto-École",
   },
   {
     title: "Assurance véhicules",
     description:
       "Accompagnement complet pour souscrire ou renouveler votre assurance auto : conseils, dossiers et mise en relation.",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Protection et assurance automobile",
+    imageAlt: "Services assurance véhicules",
   },
   {
     title: "Cartes grises",
     description:
       "Établissement, duplicata et renouvellement de cartes grises : nous vous guidons à chaque étape administrative.",
-    image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Documents administratifs et dossier carte grise",
+    imageAlt: "Démarches carte grise",
   },
   {
     title: "Plaques d'immatriculation",
     description:
       "Fabrication et pose de plaques conformes, personnalisées selon les normes en vigueur au Gabon.",
-    image:
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Plaque d'immatriculation sur un véhicule",
+    imageAlt: "Plaques d'immatriculation",
   },
   {
     title: "Acquisition de véhicules",
     description:
       "Recherche, importation, vente et location : un interlocuteur unique pour votre projet d'achat ou de location.",
-    image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Véhicule en concession, achat automobile",
+    imageAlt: "Acquisition et véhicules",
   },
   {
     title: "Accompagnement administratif",
     description:
       "Assistance pour toutes vos démarches liées au véhicule : documents, formalités et suivi jusqu'à l'aboutissement.",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format&fit=crop",
-    imageAlt: "Accompagnement administratif et dossiers",
+    imageAlt: "Accompagnement administratif",
   },
 ]
 
@@ -76,7 +68,7 @@ export function ServicesHighlight() {
             >
               <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-gray-200">
                 <Image
-                  src={service.image}
+                  src={serviceCover}
                   alt={service.imageAlt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

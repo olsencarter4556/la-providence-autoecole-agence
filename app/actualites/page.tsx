@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/shared/page-hero"
 import Link from "next/link"
 import { Calendar, ArrowRight, Tag, MessageCircle, Facebook } from "lucide-react"
+import { whatsappChatUrl } from "@/lib/whatsapp"
 
 const news = [
   {
@@ -114,7 +115,7 @@ export default function ActualitesPage() {
                 Facebook
               </a>
               <a
-                href="https://wa.me/24176592517"
+                href={whatsappChatUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg bg-green-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-green-600"

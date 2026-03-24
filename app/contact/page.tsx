@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { PageHero } from "@/components/shared/page-hero"
 import { Phone, MapPin, Clock, MessageCircle, Facebook, Instagram, Send, CheckCircle } from "lucide-react"
+import { whatsappChatUrl } from "@/lib/whatsapp"
 
 const contactInfo = [
   {
@@ -92,7 +93,7 @@ export default function ContactPage() {
 
               {/* WhatsApp Button */}
               <a
-                href="https://wa.me/24176592517"
+                href={whatsappChatUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 rounded-xl bg-green-500 p-6 text-white transition-colors hover:bg-green-600"
@@ -118,7 +119,7 @@ export default function ContactPage() {
                     <Instagram className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://wa.me/24176592517"
+                    href={whatsappChatUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-gray-600 shadow-sm transition-colors hover:bg-green-500 hover:text-white"
