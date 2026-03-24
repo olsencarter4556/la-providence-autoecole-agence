@@ -2,12 +2,13 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import siteLogo from "@/logo.png/WhatsApp Image 2026-03-21 at 13.37.51.jpeg"
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <Link href="/" className={`flex items-center gap-3 ${className}`}>
       <Image
-        src="/WhatsApp Image 2026-03-21 at 13.37.51.jpeg"
+        src={siteLogo}
         alt="Auto-École La Providence"
         width={60}
         height={60}
