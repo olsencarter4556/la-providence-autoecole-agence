@@ -69,7 +69,7 @@ export function Header() {
 
       {/* Main nav */}
       <nav className="container mx-auto px-4">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex min-h-[5.5rem] items-center justify-between py-2 md:min-h-[7rem] md:py-3">
           <Logo />
 
           {/* Desktop nav */}

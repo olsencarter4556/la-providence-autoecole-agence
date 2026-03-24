@@ -1,17 +1,24 @@
+import Image from "next/image"
 import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-gray-900">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1600&q=80')`,
-        }}
+    <section className="relative min-h-screen overflow-hidden bg-gray-900">
+      <Image
+        src="/auto-ecole-ordinaire.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+        quality={92}
       />
-      <div className="absolute inset-0 bg-[rgba(139,0,0,0.72)]" />
+      <div
+        className="absolute inset-0 z-[1] bg-[rgba(139,0,0,0.72)]"
+        aria-hidden
+      />
 
-      <div className="relative container mx-auto flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center text-white">
+      <div className="relative z-[2] container mx-auto flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center text-white">
         <span className="mb-4 inline-block rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-sm">
           Depuis 2023 - Okala Auberge, Libreville
         </span>
@@ -39,7 +46,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm">
+      <div className="absolute bottom-0 left-0 right-0 z-[2] bg-black/40 backdrop-blur-sm">
         <div className="container mx-auto flex flex-wrap items-center justify-center gap-8 px-4 py-6 text-center text-white md:justify-around">
           <div>
             <p className="text-3xl font-bold">500+</p>

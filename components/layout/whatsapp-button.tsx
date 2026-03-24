@@ -1,27 +1,33 @@
 "use client"
 
+import { useEffect, useState } from "react"
+import { createPortal } from "react-dom"
+
 /** Numéro international sans + ni espaces (Gabon) */
 const WHATSAPP_PHONE = "24176592517"
 
-const whatsappHref =
-  `https://wa.me/${WHATSAPP_PHONE}?text=` +
-  encodeURIComponent(
-    "Bonjour, je souhaite des informations sur l'auto-école La Providence.",
-  )
+/** Lien court : ouvre l’app / WhatsApp Web (sans target=_blank pour navigateurs intégrés) */
+const whatsappHref = `https://wa.me/${WHATSAPP_PHONE}`
 
 export function WhatsAppButton() {
-  return (
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const node = (
     <a
       href={whatsappHref}
-      target="_blank"
       rel="noopener noreferrer"
-      className="group fixed bottom-6 right-6 z-[9999] flex h-14 w-14 cursor-pointer touch-manipulation items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110 active:scale-95"
+      className="group fixed bottom-6 right-6 flex h-16 w-16 cursor-pointer touch-manipulation items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110 active:scale-95"
+      style={{ zIndex: 2147483647 }}
       aria-label="Contactez-nous sur WhatsApp"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 48 48"
-        className="pointer-events-none h-9 w-9"
+        className="pointer-events-none h-10 w-10"
         aria-hidden
       >
         <circle cx="24" cy="24" r="24" fill="#25D366" />
@@ -35,4 +41,10 @@ export function WhatsAppButton() {
       </span>
     </a>
   )
+
+  if (!mounted) {
+    return null
+  }
+
+  return createPortal(node, document.body)
 }
