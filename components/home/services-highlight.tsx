@@ -1,44 +1,47 @@
 import Image from "next/image"
 import { publicImages } from "@/lib/public-images"
 
-/** Photo d’illustration : une seule image locale pour l’instant ; remplacez par des fichiers dédiés dans /public si besoin. */
-const serviceCover = publicImages.autoEcole
-
-const services: { title: string; description: string; imageAlt: string }[] = [
+const services: { title: string; description: string; image: string; imageAlt: string }[] = [
   {
     title: "Formation à la conduite",
     description:
       "Permis A, B, C, D, E, F, G avec cours théoriques et pratiques personnalisés, encadrés par des moniteurs expérimentés.",
+    image: publicImages.formationConduite,
     imageAlt: "Formation à la conduite — La Providence Auto-École",
   },
   {
     title: "Assurance véhicules",
     description:
       "Accompagnement complet pour souscrire ou renouveler votre assurance auto : conseils, dossiers et mise en relation.",
+    image: publicImages.assuranceVehicules,
     imageAlt: "Services assurance véhicules",
   },
   {
     title: "Cartes grises",
     description:
       "Établissement, duplicata et renouvellement de cartes grises : nous vous guidons à chaque étape administrative.",
+    image: publicImages.carteGrise,
     imageAlt: "Démarches carte grise",
   },
   {
     title: "Plaques d'immatriculation",
     description:
       "Fabrication et pose de plaques conformes, personnalisées selon les normes en vigueur au Gabon.",
+    image: publicImages.plaquesImmatriculation,
     imageAlt: "Plaques d'immatriculation",
   },
   {
     title: "Acquisition de véhicules",
     description:
       "Recherche, importation, vente et location : un interlocuteur unique pour votre projet d'achat ou de location.",
+    image: publicImages.acquisitionVehicules,
     imageAlt: "Acquisition et véhicules",
   },
   {
     title: "Accompagnement administratif",
     description:
       "Assistance pour toutes vos démarches liées au véhicule : documents, formalités et suivi jusqu'à l'aboutissement.",
+    image: publicImages.autoEcole,
     imageAlt: "Accompagnement administratif",
   },
 ]
@@ -68,7 +71,7 @@ export function ServicesHighlight() {
             >
               <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-gray-200">
                 <Image
-                  src={serviceCover}
+                  src={service.image}
                   alt={service.imageAlt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

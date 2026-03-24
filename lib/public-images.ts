@@ -9,6 +9,11 @@ function publicFile(name: string): string {
 export const publicImages = {
   autoEcole: "/auto-ecole-ordinaire.jpg",
   logo: "/la-providence-logo.jpeg",
+  formationConduite: publicFile("formation conduite-.jpg"),
+  assuranceVehicules: publicFile("assurance-pour-vehicules-dentreprises-ce-quil-faut-savoir.jpeg"),
+  carteGrise: publicFile("carte grise-1.jpg"),
+  plaquesImmatriculation: publicFile("Plaques d'immatriculation.jpg"),
+  acquisitionVehicules: publicFile("acquisition voiture1.jpg"),
   coursProjete: publicFile("cours projecté-theorique-1024x880.jpg"),
   salleClimatisee: publicFile("salle climatisées-2093744_1280.jpg"),
   coursAnglais: publicFile("cours anglais.jpg"),
