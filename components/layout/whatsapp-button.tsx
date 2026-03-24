@@ -2,7 +2,7 @@
 
 export function WhatsAppButton() {
   return (
-    
+    <a
       href="https://wa.me/+24176592517"
       target="_blank"
       rel="noopener noreferrer"
